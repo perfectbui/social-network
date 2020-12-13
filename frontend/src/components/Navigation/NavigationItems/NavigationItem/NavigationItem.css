@@ -1,0 +1,29 @@
+.navigation-item {
+    display:flex;
+    padding-top:4px;
+    cursor: pointer;
+    width:80px;
+    margin-left:5px;
+    flex-direction: column;
+}
+
+.navigation-item {
+    color:#00000099;
+}
+
+.navigation-item:hover {
+    color:#000000E6;
+}
+
+.active {
+    color:#000000E6;
+    border-bottom: 2px solid black;
+}
+
+@media only screen and (max-width:720px) {
+    .navigation-item {
+        padding-top:10px;
+        width:70px;
+        margin-left:0;
+    }
+}

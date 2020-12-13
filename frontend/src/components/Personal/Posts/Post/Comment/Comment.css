@@ -1,0 +1,22 @@
+.comment {
+    display:flex;
+    margin-top:10px;
+    position: relative;
+}
+
+.comment img {
+    max-width: 30px;
+    max-height: 30px;
+    border-radius: 50%;
+}
+
+.comment-content {
+    max-width: 85%;
+    background-color: rgb(243, 243, 243);
+    padding:5px;
+    border-radius: 10px;
+}
+
+.comment-content p {
+    margin: 0;
+}

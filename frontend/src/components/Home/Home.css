@@ -1,0 +1,10 @@
+.home {
+    margin: 0 auto;
+    width:70%;
+}
+
+@media only screen and (max-width:700px) {
+    .home{
+       width:100%;
+    }
+}

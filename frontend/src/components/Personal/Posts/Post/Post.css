@@ -1,0 +1,137 @@
+.post {
+    margin-top:30px;
+    text-align: left;
+    padding: 10px 30px 20px 30px;
+    border:1px solid rgb(211, 211, 211);
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 1px 1px 10px rgb(202, 202, 202);
+}
+
+.post-shared {
+    padding: 10px 30px;
+    margin-bottom: 30px;
+    width:max-content;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 2px 2px 5px rgb(197, 197, 197);
+    color:#00000096;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.introduce-user {
+    display: flex;
+    position: relative;
+    font-size: 20px;
+    align-items: center;
+    height:60px;
+}
+
+.delete-comment-icon {
+    padding:5px;
+    position: absolute;
+    right:10px;
+    top:0;
+    cursor: pointer;
+}
+
+.introduce-user i {
+    margin-right: 8px;
+}
+
+.name-date {
+    margin-bottom: 5px;
+}
+
+.introduce-user span {
+    display: block;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.introduce-user .date {
+    color:#00000099;
+    font-size: 15px;
+}
+
+.post img {
+    max-width:600px;
+    max-height:600px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.content-post {
+    margin-top:3px;
+    margin-left:5px;
+    margin-bottom:12px;
+}
+
+.persons-react {
+    color:#00000096;
+    padding:0px 2px 8px 2px;
+    border-bottom: solid rgb(201, 197, 197) 1px;
+}
+
+.navbar-react {
+    display:flex;
+    justify-content: space-around;
+    padding:5px;
+    height:40px;
+    border-bottom: solid rgb(201, 197, 197) 1px;
+}
+
+.navbar-react button {
+    flex-basis:33vw;
+    color:#00000096;
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.navbar-react button:hover {
+    background-color: rgb(235, 231, 231);
+}
+
+.comment-write textarea {
+    width: 90%;
+    color:#00000096;
+    padding: 6px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: rgb(235, 235, 235);
+}
+
+.comment-write textarea:focus {
+    box-shadow: 2px 2px 5px rgb(206, 205, 205);
+}
+
+.comment-share span {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.comment-share span:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width:700px) {
+    .post img {
+        max-width:280px;
+        max-height:280px;
+    }
+
+    .comment-react {
+        font-size: 12px;
+    }
+
+    .introduce-user .date {
+        font-size: 12px;
+    }
+
+    .navbar-react button {
+        font-size: 12px;
+    }
+
+}

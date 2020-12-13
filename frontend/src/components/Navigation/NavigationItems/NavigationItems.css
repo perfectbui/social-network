@@ -1,0 +1,10 @@
+.navigation-items {
+    display:flex;
+    height:100%;
+}
+
+@media only screen and (max-width:720px) {
+    .navigation-items {
+        height:60px;
+    }
+}

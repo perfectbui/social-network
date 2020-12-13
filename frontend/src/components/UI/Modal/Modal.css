@@ -1,0 +1,6 @@
+.modal {
+    width:50vw;
+    height:50vw;
+    margin:0 auto;
+    z-index: 100;
+}

@@ -1,0 +1,144 @@
+.personal {
+  display: grid;
+  width:100%;
+  margin-top:50px;
+  grid-template-areas: "introduce main-content recommend";
+  grid-template-columns: 1.5fr 2fr 1.5fr;
+}
+
+.img-wrap {
+    position: relative;
+}
+
+.img-avt i {
+    background-color: rgb(194, 194, 194);
+    padding: 10px;
+    border-radius: 50%;
+    position: absolute;
+    bottom:5px;
+    left:73%;
+    cursor: pointer;
+}
+
+.img-avt i:hover {
+    background-color: rgb(212, 212, 212);
+}
+
+.img-cover {
+    width:850px;
+    height:320px;
+    border-radius: 5px;
+}
+
+.img-avt {
+    position: absolute;
+    bottom:-20px;
+    left:45%;
+    height:150px;
+    width:150px;
+    cursor: pointer;
+}
+
+.content {
+    grid-area: main-content;
+    margin:0 20px;
+}
+
+.post-wrap {
+    display:flex;
+    align-items: center;
+    margin-top:5px;
+    width: 95%;
+    height:65px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border:1px solid #c9c9c9;
+    border-radius:0.5rem;
+    box-shadow: 2px 2px 20px rgb(180, 180, 180);
+}
+
+.post-wrap i {
+    color:#00000099;
+    position: absolute;
+    margin-left:32px;
+}
+
+.post-wrap button {
+    text-align: left;
+    color:#00000099;
+    height:45px;
+    width:95%;
+    border:1px solid #c9c9c9;
+    border-radius:1.5rem;
+    margin:10px auto;
+    padding-left:40px;
+    cursor: pointer;
+}
+
+.post-wrap input:hover {
+    background-color:#e6e6e6 ;
+}
+
+.recommend {
+    grid-area: recommend;
+    width:60%;
+    height:450px;
+    border:1px solid #c9c9c9;
+    border-radius:1rem;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 15px rgb(196, 196, 196);
+}
+
+
+.list-company-recommend {
+    margin:0 auto;
+}
+
+.company-recommend {
+    display:flex;
+    align-items: center;
+    color:#00000099;
+    cursor: pointer;
+    margin-left:10px;
+}
+
+.company-recommend:hover {
+    color:black;
+}
+
+.company-recommend img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 5px;
+}
+
+@media only screen and (max-width:1870px) {
+    .introduce,.recommend {
+        display:none;
+    }
+    .content {
+        width:90vw;
+    }
+    .post-wrap i {
+        margin-left:3%;
+    }
+    .post-wrap button {
+        padding-left:40px;
+    }
+}
+
+@media only screen and (max-width:1000px) {
+    .post-wrap i {
+        margin-left:4%;
+    }
+    .img-cover {
+        width:80%;
+        height:200px;
+    }
+    .img-avt {
+        height:100px;
+        width:100px;
+        left:40%;
+        bottom:-15px;
+    }
+}
