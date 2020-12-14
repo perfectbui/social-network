@@ -6,8 +6,8 @@ import Axios from "axios";
 import Cookies from "js-cookie";
 
 const SignIn = (props) => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState("1@gmail.com");
+  const [password, setPassword] = useState("1");
   const [error, setError] = useState(false);
 
   const signUpHandler = () => {
@@ -48,10 +48,12 @@ const SignIn = (props) => {
         <input
           type="email"
           placeholder="Email"
+          value="1@gmail.com"
           onChange={(event) => setEmail(event.target.value)}
         />
         <input
           type="password"
+          value="1"
           placeholder="Password"
           onChange={(event) => setPassword(event.target.value)}
         />

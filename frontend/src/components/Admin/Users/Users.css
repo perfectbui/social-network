@@ -1,0 +1,8 @@
+.table-users {
+    margin: 10vh auto;
+}
+
+.table-users td,th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}

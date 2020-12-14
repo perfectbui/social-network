@@ -35,6 +35,7 @@ app.use('/api/posts',require('./routes/post'));
 app.use('/api/signin',require('./routes/signin'));
 app.use('/api/signup',require('./routes/signup'));
 app.use('/api/profile',require('./routes/profile'));
+app.use('/api/admin',require('./routes/admin'))
 
 app.use(express.static(path.join(__dirname, "/../frontend/build")));
 app.get("*", (req, res) => {

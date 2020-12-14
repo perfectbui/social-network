@@ -5,6 +5,7 @@ const postSchema = new schema({
   author: {
     type: schema.Types.ObjectId,
     ref: "User",
+    require:true,
   },
   comments: [
     {

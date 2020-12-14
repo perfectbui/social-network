@@ -20,3 +20,11 @@
 .comment-content p {
     margin: 0;
 }
+
+.delete-comment-icon {
+    display: none;
+} 
+
+/* .delete-comment-icon:hover {
+    display: block;
+}  */

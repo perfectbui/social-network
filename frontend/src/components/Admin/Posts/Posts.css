@@ -1,0 +1,8 @@
+.table-posts {
+    margin: 10vh auto;
+}
+
+.table-posts td,th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}

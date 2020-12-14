@@ -3,6 +3,7 @@ const { authenticate } = require("../middlewares/auth");
 const Post = require("../models/Post");
 const upload = require("../libs/multer");
 const cloudinary = require("../libs/cloudinary");
+const User = require("../models/User");
 
 router.get("/", async (req, res) => {
   try {
@@ -24,10 +25,10 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:email", async (req, res) => {
+router.get("/myPost/:email", async (req, res) => {
   try {
     const email = req.params["email"];
-
+    const friends = await User.find({}).limit(5);
     Post.find({})
       .sort({ timeCreated: -1 })
       .populate({
@@ -41,13 +42,17 @@ router.get("/:email", async (req, res) => {
         if (err) {
           throw new Error(err);
         }
-        docs = docs.filter(
-          (doc) =>
-            doc.author.email === email ||
-            doc.reacts.shares.filter((data) => data.user.email === email).length>0
-        );
+        if (docs.length > 0) {
+          docs = docs.filter(
+            (doc) =>
+              doc.author.email === email ||
+              doc.reacts.shares.filter((data) => data.user.email === email)
+                .length > 0
+          );
+        }
         res.status(200).json({
           posts: docs,
+          listRecommendFriend:friends.filter(friend=>friend.email!==email).reverse()
         });
       });
   } catch (err) {
@@ -199,8 +204,8 @@ router.delete("/delete", authenticate, async (req, res) => {
   try {
     const idUser = req.decoded._id;
     const { postId } = req.body;
-    const existedPost = await Post.remove({_id:postId});
-    res.send({message:"Delete course successfully"});
+    const existedPost = await Post.remove({ _id: postId });
+    res.send({ message: "Delete course successfully" });
   } catch (err) {
     res.status(400).json({
       message: err,
@@ -210,18 +215,18 @@ router.delete("/delete", authenticate, async (req, res) => {
 
 router.delete("/delete/comment", authenticate, async (req, res) => {
   try {
-    const { postId,commentId } = req.body;
+    const { postId, commentId } = req.body;
     const existedPost = await Post.findById(postId);
-    existedPost.comments = existedPost.comments.filter(comment => comment._id != commentId);
-    res.send({message:"Delete comment successfully"});
+    existedPost.comments = existedPost.comments.filter(
+      (comment) => comment._id != commentId
+    );
+    res.send({ message: "Delete comment successfully" });
   } catch (err) {
     res.status(400).json({
       message: err,
     });
   }
 });
-
-
 
 // router.delete('/:postId', authenticate, async (req, res) => {
 // 	try {

@@ -3,5 +3,5 @@ export {
 } from './auth'
 
 export {
-    getPostsHomeRequest,getPostsPersonalRequest,postComment
+    getPostsHomeRequest,getPostsFriendRequest,getPostsPersonalRequest,postComment
 } from './posts'

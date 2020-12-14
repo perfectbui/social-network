@@ -29,3 +29,25 @@
 .btn-edit-profile:hover {
     box-shadow: 2px 2px 5px rgb(158, 158, 158);
 }
+
+.edit-profile-form {
+  position: fixed;
+  left: 35%;
+  top: 35%;
+  padding: 10px;
+  z-index: 110;
+  display: flex;
+  background-color: #fafafa;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgb(220, 220, 224);
+  flex-direction: column;
+  margin: 0 auto;
+  width: 520px;
+}
+
+.edit-profile-form input {
+  border: 1px solid rgb(197, 197, 197);
+  padding:10px;
+  margin:5px;
+  border-radius: 5px;
+}

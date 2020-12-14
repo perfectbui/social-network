@@ -12,6 +12,7 @@ function issueJwt(user, res) {
 		age: user.age,
 		phone: user.phone,
 		address: user.address,
+		isAdmin:user.isAdmin,
 		iat: Date.now(),
 	};
 

@@ -39,6 +39,15 @@
     cursor: pointer;
 }
 
+.img-avt p {
+    font-size:28px;
+    font-weight:500;
+    position:absolute;
+    bottom:-60px;
+    left:-80%;
+    width:400px;
+}
+
 .content {
     grid-area: main-content;
     margin:0 20px;
@@ -47,10 +56,10 @@
 .post-wrap {
     display:flex;
     align-items: center;
-    margin-top:5px;
     width: 95%;
     height:65px;
     margin: 0 auto;
+    margin-top:25px;
     background-color: #FFFFFF;
     border:1px solid #c9c9c9;
     border-radius:0.5rem;
@@ -90,25 +99,27 @@
 }
 
 
-.list-company-recommend {
+.list-friend-recommend {
     margin:0 auto;
 }
 
-.company-recommend {
+.friend-recommend {
     display:flex;
     align-items: center;
     color:#00000099;
     cursor: pointer;
+    margin-top:10px;
     margin-left:10px;
 }
 
-.company-recommend:hover {
+.friend-recommend:hover {
     color:black;
 }
 
-.company-recommend img {
-    max-width: 50px;
-    max-height: 50px;
+.friend-recommend img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     margin-right: 5px;
 }
 
@@ -140,5 +151,8 @@
         width:100px;
         left:40%;
         bottom:-15px;
+    }
+    .img-avt p {
+        left:-150%;
     }
 }

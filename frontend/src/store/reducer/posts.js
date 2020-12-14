@@ -7,10 +7,32 @@ export const getPostsPersonalReducer = (
   switch (action.type) {
     case actionTypes.GET_POSTS_PERSONAL_SUCCESS:
       return {
-        data: action.payload,
+        data: action.payload.posts,
+        listRecommendFriend:action.payload.listRecommendFriend,
         loadingPosts: false,
       };
     case actionTypes.GET_POSTS_PERSONAL_FAIL:
+      return {
+        error: true,
+        loadingPosts: false,
+      };
+    default:
+      return state;
+  }
+};
+
+export const getPostsFriendReducer = (
+  state = { loadingPosts: true },
+  action
+) => {
+  switch (action.type) {
+    case actionTypes.GET_POSTS_FRIEND_SUCCESS:
+      return {
+        data: action.payload.posts,
+        listRecommendFriend:action.payload.listRecommendFriend,
+        loadingPosts: false,
+      };
+    case actionTypes.GET_POSTS_FRIEND_FAIL:
       return {
         error: true,
         loadingPosts: false,
@@ -37,7 +59,10 @@ export const getPostsHomeReducer = (state = { loadingPosts: true }, action) => {
   }
 };
 
-export const postCommentReducer = (state={loadingComment:false}, action) => {
+export const postCommentReducer = (
+  state = { loadingComment: false },
+  action
+) => {
   switch (action.type) {
     case actionTypes.POST_COMMENT_REQUEST:
       return {

@@ -11,6 +11,10 @@ import Notifications from './components/Notifications/Notifications';
 import SignIn from './components/Auth/SignIn/SignIn';
 import SignUp from './components/Auth/SignUp/SignUp';
 import SignOut from './components/Auth/SignOut/SignOut';
+import Users from './components/Admin/Users/Users'
+import Posts from './components/Admin/Posts/Posts'
+import Friend from './components/Friend/Friend'
+
 import { parseJwt } from './utils';
 import * as actions from './store/action/index';
 
@@ -33,6 +37,9 @@ class App extends Component {
 					<Route path="/personal" component={Personal} />
 					<Route path="/notifications" component={Notifications} />
 					<Route path="/signup" component={SignUp} />
+					<Route path="/admin/users" component={Users} />
+					<Route path="/admin/posts" component={Posts} />
+					<Route path="/friend/:email" component={Friend} />
 				</Layout>
 			</div>
 		);

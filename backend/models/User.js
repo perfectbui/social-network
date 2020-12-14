@@ -23,6 +23,10 @@ const UserSchema = new schema({
 	age: Number,
 	address: String,
 	phone: String,
+	isAdmin: {
+		type:Boolean,
+		default:false
+	}
 });
 
 const User = mongoose.model('User', UserSchema);

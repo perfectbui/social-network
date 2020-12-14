@@ -156,7 +156,7 @@ const Post = (props) => {
         setLoading(false);
         dispatch(getPostsHomeRequest());
         dispatch(getPostsPersonalRequest(dataUser.email));
-        document.getElementById("post").style.display = 'none';
+        document.getElementById("post").style.display = "none";
       })
       .catch((error) => console.log(error));
   };
@@ -177,12 +177,23 @@ const Post = (props) => {
               height: "50px",
               borderRadius: "50%",
               marginRight: "5px",
+              cursor: "pointer",
             }}
             src={props.post.author.avatar}
             alt="avatar"
+            onClick={() =>
+              (window.location.href = "/friend/" + props.post.author.email)
+            }
           />
           <div className="name-date">
-            <span>{props.post.author.userName}</span>
+            <span
+              style={{ cursor: "pointer" }}
+              onClick={() =>
+                (window.location.href = "/friend/" + props.post.author.email)
+              }
+            >
+              {props.post.author.userName}
+            </span>
             <span className="date">
               {dateFormat(
                 props.post.timeCreated,
@@ -190,7 +201,13 @@ const Post = (props) => {
               )}
             </span>
           </div>
-          { dataUser && props.post.author.email === dataUser.email ? (
+          {dataUser &&
+          (
+            props.post.author.email === dataUser.email ||
+            props.post.reacts.shares.filter(
+              (post) => post.user.email === dataUser.email
+            )
+          ).length > 0 ? (
             <div
               className="delete-comment-icon"
               onClick={() => setToggleDelete((prevState) => !prevState)}
@@ -224,7 +241,11 @@ const Post = (props) => {
         </div>
         <div className="content-post">{props.post.content}</div>
         {props.post.image ? (
-          <img style={{objectFit:'cover'}} src={props.post.image} alt="img-post" />
+          <img
+            style={{ objectFit: "cover" }}
+            src={props.post.image}
+            alt="img-post"
+          />
         ) : null}
         <div className="comment-post">
           <div className="comment-react">
@@ -282,6 +303,7 @@ const Post = (props) => {
           <div className="list-comment">
             {listComment.map((comment) => (
               <Comment
+                email={comment.user.email}
                 idComment={comment._id}
                 post={props.post}
                 key={comment._id}

@@ -9,13 +9,14 @@ import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
 
 import {authReducer} from './store/reducer/auth'
-import {getPostsPersonalReducer,getPostsHomeReducer,postCommentReducer} from './store/reducer/posts'
+import {getPostsHomeReducer,getPostsPersonalReducer,postCommentReducer, getPostsFriendReducer} from './store/reducer/posts'
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
 const rootReducer = combineReducers({
   auth:authReducer,
   postsHome:getPostsHomeReducer,
+  postsFriend:getPostsFriendReducer,
   postsPersonal:getPostsPersonalReducer,
   postComment:postCommentReducer
 })

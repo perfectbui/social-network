@@ -6,7 +6,7 @@ export const getPostsPersonalRequest = (email) => {
   return (dispatch) => {
     Axios({
       method: "get",
-      url: "/api/posts/" + email,
+      url: "/api/posts/myPost/" + email,
       headers: {
         "X-Requested-with": "XMLHttpRequest",
       },
@@ -23,6 +23,29 @@ export const getPostsPersonalRequest = (email) => {
       });
   };
 };
+
+export const getPostsFriendRequest = (email) => {
+  return (dispatch) => {
+    Axios({
+      method: "get",
+      url: "/api/posts/myPost/" + email,
+      headers: {
+        "X-Requested-with": "XMLHttpRequest",
+      },
+    })
+      .then((response) => {
+        dispatch({
+          type: actionTypes.GET_POSTS_FRIEND_SUCCESS,
+          payload: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log("get posts friend action failed")
+        dispatch({ type: actionTypes.GET_POSTS_FRIEND_FAIL, payload: error });
+      });
+  };
+};
+
 
 export const getPostsHomeRequest = (email) => {
   return (dispatch) => {
