@@ -100,11 +100,11 @@
     padding: 6px;
     font-size: 16px;
     border-radius: 10px;
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(241, 241, 241);
 }
 
 .comment-write textarea:focus {
-    box-shadow: 2px 2px 5px rgb(206, 205, 205);
+    box-shadow: 0px 0px 1px 1px rgb(181, 202, 233);
 }
 
 .comment-share span {

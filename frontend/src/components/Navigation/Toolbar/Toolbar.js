@@ -29,7 +29,7 @@ const Toolbar = (props) => {
               src={dataUser.avatar}
               alt="img"
             />
-            <span style={{ marginLeft: "5px", fontSize: "16px" }}>{dataUser.userName}</span>
+            <span style={{ marginLeft: "5px", fontSize: "16px",fontWeight:'500' }}>{dataUser.userName}</span>
             {toggleLogout ? (
               <p
                 style={{

@@ -9,7 +9,7 @@
 }
 .loader {
   position: fixed;
-  z-index: 150;
+  z-index: 500;
   color: #c36060;
   text-indent: -9999em;
   top:35vh;

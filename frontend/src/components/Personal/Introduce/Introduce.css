@@ -27,7 +27,7 @@
 }
 
 .btn-edit-profile:hover {
-    box-shadow: 2px 2px 5px rgb(158, 158, 158);
+    box-shadow: 0px 0px 2px 0px rgb(158, 158, 158);
 }
 
 .edit-profile-form {

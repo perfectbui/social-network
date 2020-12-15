@@ -7,7 +7,7 @@ const Spinner = () => {
     return (
         <React.Fragment>
             <Backdrop show/>
-            <div className="loader">Loading...</div>
+            <div id="spinner" className="loader">Loading...</div>
         </React.Fragment>
     )
 }

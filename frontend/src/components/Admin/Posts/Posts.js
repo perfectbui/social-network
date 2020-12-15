@@ -23,7 +23,10 @@ const Posts = () => {
       },
     })
       .then((response) => {
-        if(response.data.length>0)  setListPost(response.data);
+        if (response.data.length > 0) setListPost(response.data);
+        else {
+          setListPost(null);
+        }
       })
       .catch((error) => console.log(error));
     return () => {};
@@ -40,7 +43,10 @@ const Posts = () => {
       },
     })
       .then((response) => {
-        setListPost(response.data);
+        if (response.data.length > 0) setListPost(response.data);
+        else {
+          setListPost(null);
+        }
         dispatch(getPostsHomeRequest());
         dispatch(getPostsPersonalRequest(dataUser.email));
       })
@@ -59,29 +65,30 @@ const Posts = () => {
           <th>Time Created</th>
           <th>Delete</th>
         </tr>
-        {listPost &&
-          listPost.map((post) => (
-            <tr>
-              <td>{post._id}</td>
-              <td>{post.author.userName}</td>
-              <td>{post.comments.length}</td>
-              <td>{post.reacts.likes.length}</td>
-              <td>{post.reacts.shares.length}</td>
-              <td>
-                {dateFormat(
-                  post.timeCreated,
-                  "dddd, mmmm dS, yyyy, h:MM:ss TT"
-                )}
-              </td>
-              <td>
-                <i
-                  onClick={(event) => deletePost(event, post._id)}
-                  className="fas fa-trash"
-                  style={{ color: "red", cursor: "pointer" }}
-                ></i>
-              </td>
-            </tr>
-          ))}
+        {listPost
+          ? listPost.map((post) => (
+              <tr>
+                <td>{post._id}</td>
+                <td>{post.author.userName}</td>
+                <td>{post.comments.length}</td>
+                <td>{post.reacts.likes.length}</td>
+                <td>{post.reacts.shares.length}</td>
+                <td>
+                  {dateFormat(
+                    post.timeCreated,
+                    "dddd, mmmm dS, yyyy, h:MM:ss TT"
+                  )}
+                </td>
+                <td>
+                  <i
+                    onClick={(event) => deletePost(event, post._id)}
+                    className="fas fa-trash"
+                    style={{ color: "red", cursor: "pointer" }}
+                  ></i>
+                </td>
+              </tr>
+            ))
+          : null}
       </table>
     </div>
   );

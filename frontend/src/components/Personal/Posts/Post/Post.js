@@ -206,10 +206,10 @@ const Post = (props) => {
             props.post.author.email === dataUser.email ||
             props.post.reacts.shares.filter(
               (post) => post.user.email === dataUser.email
-            )
-          ).length > 0 ? (
+            ).length > 0
+          ) ? (
             <div
-              className="delete-comment-icon"
+              style={{position:'absolute',right:'10px',cursor:'pointer'}}
               onClick={() => setToggleDelete((prevState) => !prevState)}
             >
               <i

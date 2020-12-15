@@ -15,6 +15,13 @@ const Form = (props) => {
     document.getElementById("upload-photo").click();
   };
 
+  useEffect(() => {
+    if (document.getElementById("spinner")) {
+      document.getElementById("spinner").style.top = "0";
+    }
+    return () => {};
+  }, [loading]);
+
   const postHandler = (event) => {
     event.preventDefault();
     setLoading(true);
@@ -67,7 +74,7 @@ const Form = (props) => {
     <Aux>
       {loading ? <Spinner /> : null}
       <Backdrop show={props.show} click={props.click} />
-      <form className="form">
+      <form className="form" id="form-create-post">
         <h3
           style={{
             color: "#00000096",
